@@ -64,13 +64,13 @@ body {
 
 .container {
   width: 100%; }
-  .container .col-main-info {
+  .container .col-main-info, .container .col-main-text {
     display: flex;
     flex-direction: column;
     width: 100%; }
-    .container .col-main-info .Img-main-info img {
+    .container .col-main-info .Img-main-info img, .container .col-main-text .Img-main-info img {
       width: 100%; }
-    .container .col-main-info .text-main-info {
+    .container .col-main-info .text-main-info, .container .col-main-text .text-main-info {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -82,5 +82,12 @@ body {
       color: #ffffff;
       font-family: "HUGEAvantGardeBold";
       font-size: 120px; }
+  .container .col-main-text span {
+    max-width: 968px;
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */
