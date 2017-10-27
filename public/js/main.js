@@ -54,8 +54,12 @@ function ShowMenu(ObjMenu,data){
                     //NodeLink.setAttribute("onmouseout", "ShowSubMenu(event, this)"); 
                     var NodeUl = document.createElement("ul");
                     NodeUl.setAttribute("class", "item_desplegable");
+                    
                     ShowMenu(NodeUl, data.items[i]);
                     NodeLi.appendChild( NodeUl);
+                }
+                else{
+                    NodeLi.setAttribute("onmouseover", "HideSubMenu(event, this)");
                 }                
             }
 
@@ -65,23 +69,39 @@ function ShowMenu(ObjMenu,data){
 }
  
 function ShowSubMenu(event, obj){
-    event.preventDefault();
+    
     var SubMenu = obj.nextSibling;
     var AllSubMenu = document.getElementsByClassName("item_desplegable");
-    
+    var AllDespMenu = document.getElementsByClassName("nav_desplegable");
+    var ContainerBg = document.getElementById("container_bg");
+    ContainerBg.style.display = "flex";   
     
 
-    if( SubMenu.style.display == "flex"){
+    /*if( SubMenu.style.display == "flex"){
         SubMenu.style.display = "none";
+        obj.style.backgroundColor = "#ec008c";
+        obj.style.color= "#ffffff";
+        for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
+    }else{*/
         
-    }else{
-        
+        for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
+        obj.style.backgroundColor = "#ffffff";
+        obj.style.color="#ec008c";        
         for(var i in AllSubMenu) AllSubMenu.item(i).style.display = "none";
-        SubMenu.style.display = "flex";
-        
-    }
+        SubMenu.style.display = "flex";        
+    //}
 
 }
+
+function HideSubMenu(){
+    
+    var AllSubMenu = document.getElementsByClassName("item_desplegable");
+    var AllDespMenu = document.getElementsByClassName("nav_desplegable");
+    for(var i in AllSubMenu) AllSubMenu.item(i).style.display = "none";
+    for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
+    
+}
+
 
   
 
