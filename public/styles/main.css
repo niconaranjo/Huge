@@ -1,0 +1,86 @@
+@import url(fonts.css);
+ul, li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+
+a {
+  text-decoration: none;
+  color: #ffffff; }
+
+body {
+  background: #fff;
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+
+#main-menu {
+  display: flex;
+  flex-direction: row;
+  background-color: #ec008c;
+  max-height: 72px; }
+  #main-menu #HugeLogo img {
+    padding: 24px;
+    width: 60px;
+    height: 24px; }
+  #main-menu #menu {
+    display: flex;
+    flex-direction: row;
+    max-height: 72px; }
+    #main-menu #menu li {
+      display: flex;
+      flex-direction: column; }
+      #main-menu #menu li .nav_desplegable, #main-menu #menu li .but_principal {
+        height: auto;
+        padding: 22px 24px;
+        font-size: 21px;
+        font-family: "HUGEAvantGardeBold";
+        height: 72px;
+        max-height: 72px; }
+      #main-menu #menu li .item_desplegable {
+        padding: 12px 0px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #ffffff;
+        top: 72px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto; }
+        #main-menu #menu li .item_desplegable li {
+          width: 100%; }
+          #main-menu #menu li .item_desplegable li .but_secundario {
+            padding: 16px 24px;
+            font-size: 16px;
+            font-family: "" Galaxie "";
+            height: auto;
+            color: #ec008c; }
+          #main-menu #menu li .item_desplegable li:hover {
+            background-color: #EEEEEE; }
+      #main-menu #menu li:hover {
+        background-color: #ffffff; }
+        #main-menu #menu li:hover .nav_desplegable, #main-menu #menu li:hover .but_principal {
+          color: #ec008c; }
+
+.container {
+  width: 100%; }
+  .container .col-main-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .container .col-main-info .Img-main-info img {
+      width: 100%; }
+    .container .col-main-info .text-main-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      color: #ffffff;
+      font-family: "HUGEAvantGardeBold";
+      font-size: 120px; }
+
+/*# sourceMappingURL=main.css.map */

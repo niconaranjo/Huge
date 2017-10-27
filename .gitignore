@@ -1,0 +1,10 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/api
+/bin
+/node_modules
+.app.js
+.package.json
+
+
