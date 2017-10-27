@@ -50,8 +50,7 @@ function ShowMenu(ObjMenu,data){
                 if(data.items[i].items.length>0){
                     
                     NodeLink.setAttribute("class", "nav_desplegable"); 
-                    NodeLink.setAttribute("onmouseover", "ShowSubMenu(event, this)"); 
-                    //NodeLink.setAttribute("onmouseout", "ShowSubMenu(event, this)"); 
+                    NodeLink.setAttribute("onclick", "ShowSubMenu(event, this)"); 
                     var NodeUl = document.createElement("ul");
                     NodeUl.setAttribute("class", "item_desplegable");
                     
@@ -69,38 +68,31 @@ function ShowMenu(ObjMenu,data){
 }
  
 function ShowSubMenu(event, obj){
-    
+    event.preventDefault();
     var SubMenu = obj.nextSibling;
     var AllSubMenu = document.getElementsByClassName("item_desplegable");
     var AllDespMenu = document.getElementsByClassName("nav_desplegable");
     var ContainerBg = document.getElementById("container_bg");
     ContainerBg.style.display = "flex";   
-    
-
-    /*if( SubMenu.style.display == "flex"){
-        SubMenu.style.display = "none";
-        obj.style.backgroundColor = "#ec008c";
-        obj.style.color= "#ffffff";
-        for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
-    }else{*/
-        
-        for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
-        obj.style.backgroundColor = "#ffffff";
-        obj.style.color="#ec008c";        
-        for(var i in AllSubMenu) AllSubMenu.item(i).style.display = "none";
-        SubMenu.style.display = "flex";        
-    //}
-
+   
+    for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
+    obj.style.backgroundColor = "#ffffff";
+    obj.style.color="#ec008c";        
+    for(var i in AllSubMenu) AllSubMenu.item(i).style.display = "none";
+    SubMenu.style.display = "flex";        
+  
 }
 
 function HideSubMenu(){
     
     var AllSubMenu = document.getElementsByClassName("item_desplegable");
     var AllDespMenu = document.getElementsByClassName("nav_desplegable");
+    var ContainerBg = document.getElementById("container_bg");
     for(var i in AllSubMenu) AllSubMenu.item(i).style.display = "none";
     for(var i in AllDespMenu ) {AllDespMenu.item(i).style.backgroundColor = "#ec008c"; AllDespMenu.item(i).style.color= "#ffffff";}
-    
+    ContainerBg.style.display = "none";  
 }
+
 
 
   
@@ -143,19 +135,5 @@ function HideSubMenu(){
             }            
         }
 
-
-
-
-
-  $.each(data, function(i,item){
-    var obj = i+1;
-    $(".table-content").append('<tr id="iden-'+item.id_ubi+'"><td>'+obj+'</td>'+
-                               '<td>'+item.id_ubi+'</td>'+
-                               '<td class="nombre-ubi">'+item.nombre_ubi+'</td>'+
-                               '<td><button type="button" onClick="cambiar('+item.id_ubi+')" class="btn btn-primary glyphicon glyphicon-pencil"></button></td>'+
-                               '<td><button type="button" onClick="ver('+item.id_ubi+')" class="btn btn-warning glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#myModal"></button></td>'+
-                               '<td><button type="button" onClick="borrar('+item.id_ubi+')" class="btn btn-danger glyphicon glyphicon-remove"></button></td></tr>'
-        );
-});
 
 */

@@ -38,8 +38,8 @@ body {
         max-height: 72px;
         color: #ffffff; }
         #main-menu #menu li .nav_desplegable:hover, #main-menu #menu li .but_principal:hover {
-          background-color: #ffffff;
-          color: #ec008c; }
+          background-color: #ffffff !important;
+          color: #ec008c !important; }
       #main-menu #menu li .item_desplegable {
         padding: 12px 0px;
         display: none;
