@@ -48,11 +48,12 @@ body {
         align-items: flex-start;
         width: auto; }
         #main-menu #menu li .item_desplegable li {
-          width: 100%; }
+          width: 100%;
+          z-index: 500; }
           #main-menu #menu li .item_desplegable li .but_secundario {
             padding: 16px 24px;
             font-size: 16px;
-            font-family: "" Galaxie "";
+            font-family: "Galaxie";
             height: auto;
             color: #ec008c; }
           #main-menu #menu li .item_desplegable li:hover {
@@ -85,9 +86,7 @@ body {
   .container .col-main-text span {
     max-width: 968px;
     width: 100%;
-    padding-top: 60px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 60px 24px;
     margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */

@@ -50,8 +50,8 @@ function ShowMenu(ObjMenu,data){
                 if(data.items[i].items.length>0){
                     
                     NodeLink.setAttribute("class", "nav_desplegable"); 
-                    NodeLink.setAttribute("onclick", "ShowSubMenu(event, this)"); 
-                    
+                    NodeLink.setAttribute("onmouseover", "ShowSubMenu(event, this)"); 
+                    //NodeLink.setAttribute("onmouseout", "ShowSubMenu(event, this)"); 
                     var NodeUl = document.createElement("ul");
                     NodeUl.setAttribute("class", "item_desplegable");
                     ShowMenu(NodeUl, data.items[i]);
@@ -69,12 +69,16 @@ function ShowSubMenu(event, obj){
     var SubMenu = obj.nextSibling;
     var AllSubMenu = document.getElementsByClassName("item_desplegable");
     
+    
 
     if( SubMenu.style.display == "flex"){
         SubMenu.style.display = "none";
+        
     }else{
+        
         for(var i in AllSubMenu) AllSubMenu.item(i).style.display = "none";
         SubMenu.style.display = "flex";
+        
     }
 
 }
